@@ -198,7 +198,7 @@
     function btnCClick(e){
         alarm();
         active = false;
-        period = 60* ParseInt( $("#minite").val() ) + parseInt( $("#second").val() );
+        period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
         $("#time").html("経過時間 : 0");
         $("#remain").html("残り時間 : " + period);
         
@@ -209,13 +209,15 @@
     function timer(){  
         if (active) {
             etime = parseInt( (new Date() - startTime)/1000 );
-            rest = period - etime;　
+            rest = period - etime;
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
-
+            if(rest <= 0) {
+            active = false;
+            alarm();
+            }
         }
-        
     } 
 
   </script>
