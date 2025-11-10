@@ -155,7 +155,6 @@
     var period = 0;
     var rest = 0;
     var etime = 0;
-    var count = 0;
 
 
     
@@ -215,12 +214,6 @@
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
-            for (var i = 1; i <= etime; i++) {
-            if (i % 180 === 0) { 
-                count = i / 180;
-            }
-            }
-            $("#ramen").html("ラーメン：" + count + "杯");
             if(rest <= 0) {
             active = false;
             alarm();
@@ -239,7 +232,7 @@
 
     <div id="remain">Remaining time</div>
     <div id="time">Time</div>
-    <div id="ramen">ラーメン: 0杯</div>
+    <div id="ramen">ラーメン : 0杯</div>
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>  
