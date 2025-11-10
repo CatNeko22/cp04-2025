@@ -215,6 +215,12 @@
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
+            for(var i = 1; i < etime; i++) {
+                if(i % 180 == 0){
+                    count = i / 180;
+                }
+            }
+            $("#ramen").html("ラーメン : " + count + "杯");
             if(rest <= 0) {
             active = false;
             alarm();
